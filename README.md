@@ -18,7 +18,6 @@ Requirements:
 
 Clone the repository:
 git clone https://github.com/datth235/Digital-Electronics.git
-
 cd Digital-Electronics
 
 Run the program (without recompiling):
@@ -26,7 +25,6 @@ app.exe
 
 Build from source:
 g++ main.cpp gen_state_table.cpp -o app
-app
 
 Program output:
 - State transition table (present state, next state for w = 0 and w = 1)
