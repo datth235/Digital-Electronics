@@ -1,4 +1,5 @@
 #include"gen_state_table.h"
+#include "fsm_graphviz.h"
 #include<vector>
 #include<iostream>
 #include<string>
@@ -6,6 +7,7 @@
 using namespace std;
 
 int main(){
+    string text = "Image/";
     int n;
     cout << "Nhap so chuoi w muon phat hien: ";
     cin >> n;
@@ -27,12 +29,24 @@ int main(){
         print_moore_state_table(moore);
         cout << "Bang ma hoa: \n";
         map<node_moore, string> mp = encode_moore_state_table(moore);
+        text += "Moore_";
+        for(int i = 0; i < w.size(); i++){
+            text += w[i];
+            if(i != w.size() - 1) text += '_';
+        }
+        exportMooreFSM(moore, text);
     }
     else if(n == 2){
         node_mealy mealy = gen_mealy(w);
         print_mealy_state_table(mealy);
         cout << "Bang ma hoa: \n";
         map<node_mealy, string> mp = encode_mealy_state_table(mealy);
+        text += "Mealy_";
+        for(int i = 0; i < w.size(); i++){
+            text += w[i];
+            if(i != w.size() - 1) text += '_';
+        }
+        exportMealyFSM(mealy, text);
     }
     else{
         cout << "ERROR\n";

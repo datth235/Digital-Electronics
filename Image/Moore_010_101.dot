@@ -1,0 +1,24 @@
+digraph FSM {
+rankdir=LR;
+A0 [label="A0/0"];
+A0 -> A1 [label="0"];
+A1 [label="A1/0"];
+A1 -> A1 [label="0"];
+A1 -> A3 [label="1"];
+A3 [label="A3/0"];
+A3 -> A5 [label="0"];
+A5 [label="A5/1"];
+A5 -> A1 [label="0"];
+A5 -> A6 [label="1"];
+A6 [label="A6/1"];
+A6 -> A5 [label="0"];
+A6 -> A2 [label="1"];
+A2 [label="A2/0"];
+A2 -> A4 [label="0"];
+A4 [label="A4/0"];
+A4 -> A1 [label="0"];
+A4 -> A6 [label="1"];
+A2 -> A2 [label="1"];
+A3 -> A2 [label="1"];
+A0 -> A2 [label="1"];
+}

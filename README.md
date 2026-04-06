@@ -1,43 +1,154 @@
-# Digital Electronics Project – Sequence Detector (C++)
+# Digital Electronics -- Sequence Detector (C++)
 
-This project is developed for the Digital Electronics course. The purpose of the project is to generate the state transition table and the state encoding table for a finite state machine (FSM) used in a binary input sequence detection problem, where the input signal is denoted as w.
+This project is developed for the **Digital Electronics** course.\
+The goal of the project is to generate and analyze the **Finite State
+Machine (FSM)** used for a **binary sequence detection problem**, where
+the input signal is denoted as `w`.
 
-All source code in this project is written entirely by the author.
+The program automatically generates:
 
-The project is implemented in C++ and is intended for educational purposes.
+-   **State transition table**
+-   **State encoding table**
+-   **FSM graph visualization (Moore / Mealy)**
+-   **Output values for each state**
 
-Project structure:
-- main.cpp : Main program
-- gen_state_table.cpp  : FSM logic and state transition implementation
-- gen_state_table.h    : State definitions and function declarations
-- app.exe : Precompiled executable file for Windows
+All source code in this repository is written entirely by the author.
 
-Requirements:
-- Operating system: Windows
-- Compiler (optional, for rebuilding): g++ (MinGW / MSYS2 / Dev-C++) or Microsoft Visual Studio
+This project is intended for **educational purposes only**.
 
-Clone the repository:
-git clone https://github.com/datth235/Digital-Electronics.git
-cd Digital-Electronics
+------------------------------------------------------------------------
 
-Run the program (without recompiling):
-app.exe
+# Features
 
-Build from source:
-g++ main.cpp gen_state_table.cpp -o app
+-   Generate **FSM state transition table**
+-   Generate **state encoding table**
+-   Support for both **Moore FSM** and **Mealy FSM**
+-   Export FSM diagrams using Graphviz
+-   Save FSM diagrams as images
 
-Program output:
-- State transition table (present state, next state for w = 0 and w = 1)
-- State encoding table (binary representation of states)
-- Output values corresponding to each state
+------------------------------------------------------------------------
 
-Notes:
-- The executable file works only on Windows
-- Recompiling is recommended after modifying the source code
-- This project focuses on FSM analysis and state encoding, not hardware implementation
+# Project Structure
 
-Author:
-Dat Nguyen Thanh - ET05 - K68
+    Digital-Electronics
+    │
+    ├── image/                # Generated FSM images
+    │
+    ├── main.cpp              # Main program
+    ├── gen_state_table.cpp   # FSM generation logic
+    ├── gen_state_table.h     # FSM structures and declarations
+    ├── fsm_graphviz.cpp      # Graphviz export implementation
+    ├── fsm_graphviz.h        # Graphviz interface
+    │
+    ├── app.exe               # Precompiled Windows executable
+    ├── Makefile              # Build automation (Linux / WSL)
+    └── README.md
 
-License:
-This project is intended for educational purposes only. Commercial use is not permitted.
+------------------------------------------------------------------------
+
+# Requirements
+
+Operating System:
+
+-   Windows
+-   Linux / WSL (recommended)
+
+Compiler:
+
+-   g++ (MinGW / MSYS2 / Dev-C++ / GCC)
+
+Additional tool (for FSM visualization):
+
+-   Graphviz
+
+Install Graphviz on Linux / WSL:
+
+    sudo apt install graphviz
+
+------------------------------------------------------------------------
+
+# Clone the Repository
+
+    git clone https://github.com/datth235/Digital-Electronics.git
+    cd Digital-Electronics
+
+------------------------------------------------------------------------
+
+# Run the Program (Windows)
+
+If you do not want to recompile:
+
+    app.exe
+
+------------------------------------------------------------------------
+
+# Build from Source
+
+Compile manually:
+
+    g++ main.cpp gen_state_table.cpp fsm_graphviz.cpp -o app
+
+or using Makefile:
+
+    make
+
+Run the program:
+
+    ./app
+
+------------------------------------------------------------------------
+
+# Program Output
+
+The program generates:
+
+1.  **State Transition Table**
+    -   Present state
+    -   Next state for `w = 0`
+    -   Next state for `w = 1`
+2.  **State Encoding Table**
+    -   Binary encoding of each state
+3.  **FSM Graph**
+    -   Automatically generated using Graphviz
+    -   Saved in the `Image/` directory
+
+------------------------------------------------------------------------
+
+# Example Output
+
+    State Transition Table
+
+    Present State | w=0 | w=1
+    --------------------------
+    A0            | A0  | A1
+    A1            | A0  | A2
+    A2            | A3  | A1
+    ...
+
+Generated FSM diagram:
+
+    Image/....png
+
+------------------------------------------------------------------------
+
+# Notes
+
+-   The provided executable works **only on Windows**
+-   Recompiling is recommended after modifying the source code
+-   This project focuses on **FSM analysis and state encoding**, not
+    hardware implementation
+
+------------------------------------------------------------------------
+
+# Author
+
+**Dat Nguyen Thanh**\
+ET1 -- 05 -- K68
+HaNoi University of science and technology
+
+------------------------------------------------------------------------
+
+# License
+
+This project is intended **for educational purposes only**.\
+Commercial use is **not permitted**.
