@@ -32,7 +32,7 @@ This project is intended for **educational purposes only**.
 
     Digital-Electronics
     │
-    ├── image/                # Generated FSM images
+    ├── Image/                # Generated FSM images
     │
     ├── main.cpp              # Main program
     ├── gen_state_table.cpp   # FSM generation logic
