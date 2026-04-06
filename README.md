@@ -143,7 +143,7 @@ Generated FSM diagram:
 # Author
 
 **Dat Nguyen Thanh**\
-ET1 -- 05 -- K68
+ET1 -- 05 -- K68 \
 HaNoi University of science and technology
 
 ------------------------------------------------------------------------
